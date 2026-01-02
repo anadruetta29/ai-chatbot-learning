@@ -24,3 +24,14 @@ I focused on clearly defining the responsibility of each function and
 refactoring the code to make it more modular, readable, and reusable.
 This helped me better understand clean code principles in Python.
 
+## How to Run
+python text_analyzer.py
+
+## Example output 
+[
+  ["python", 5],
+  ["data", 2],
+  ["artificial", 2],
+  ["intelligence", 2],
+  ["code", 2]
+]
