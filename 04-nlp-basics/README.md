@@ -47,3 +47,7 @@ Output:
 Vocabulary:  {'hello': 1, 'today': 9, 'leave': 4, 'see': 8, 'later': 3, 'help': 2, 'problem': 6, 'maybe': 5, 'well': 10, 'go': 0, 'ready': 7}
 Matrix:  [[0.2 0.4 0.2 0.2 0.2 0.2 0.4 0.2 0.2 0.6 0.2]]
 
+## Conclusion
+BoW and TF-IDF both turn text into numbers, but TF-IDF highlights the more important words while BoW only counts 
+occurrences. In practice, TF-IDF provides a more informative representation, making it easier for models to 
+focus on meaningful words rather than treating all words equally.
