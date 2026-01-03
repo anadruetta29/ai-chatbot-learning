@@ -17,7 +17,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 # Vectorize text
-vectorizer = TfidfVectorizer()
+vectorizer = TfidfVectorizer() # Normalize
 
 X_train_vec = vectorizer.fit_transform(X_train)
 X_test_vec = vectorizer.transform(X_test)
@@ -37,8 +37,8 @@ accuracy = accuracy_score(y_test, y_pred)
 print(f"Accuracy del modelo: {accuracy:.2f}")
 
 # Save data model
-joblib.dump(model, "model.pkl")
-joblib.dump(vectorizer, "vectorizer.pkl")
+joblib.dump(model, "models/model.pkl")
+joblib.dump(vectorizer, "models/vectorizer.pkl")
 
 print("Model and vectorizer saved")
 
