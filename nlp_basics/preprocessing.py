@@ -29,7 +29,7 @@ def get_wordnet_pos(treebank_tag):
 
 def preprocess_text(text):
     # Join sentences
-    original_text = " ".join(sentences)
+    original_text = " ".join(text)
     # print("Original text:", original_text)
 
     # Tokenize
