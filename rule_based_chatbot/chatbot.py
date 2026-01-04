@@ -25,8 +25,6 @@ def find_intent(user_sentence):
                 return tag
     return None
 
-
-
 print("Chatbot (type 'quit' to exit)")
 while True:
     user_input = input("Enter a sentence: ")
