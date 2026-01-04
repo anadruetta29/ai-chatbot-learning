@@ -1,43 +1,101 @@
-[
-  {"text": "hello", "intent": "greeting"},
-  {"text": "hi there", "intent": "greeting"},
-  {"text": "good morning", "intent": "greeting"},
-  {"text": "good afternoon", "intent": "greeting"},
-  {"text": "hey", "intent": "greeting"},
-  {"text": "hi", "intent": "greeting"},
-  {"text": "good evening", "intent": "greeting"},
-
-  {"text": "bye", "intent": "goodbye"},
-  {"text": "see you later", "intent": "goodbye"},
-  {"text": "good night", "intent": "goodbye"},
-  {"text": "farewell", "intent": "goodbye"},
-  {"text": "have a nice day", "intent": "goodbye"},
-  {"text": "take care", "intent": "goodbye"},
-  {"text": "see you soon", "intent": "goodbye"},
-
-  {"text": "can you help me", "intent": "help"},
-  {"text": "i need help", "intent": "help"},
-  {"text": "help me please", "intent": "help"},
-  {"text": "i am lost", "intent": "help"},
-  {"text": "can you assist me", "intent": "help"},
-  {"text": "support needed", "intent": "help"},
-
-  {"text": "thank you", "intent": "thanks"},
-  {"text": "thanks", "intent": "thanks"},
-  {"text": "thanks a lot", "intent": "thanks"},
-  {"text": "many thanks", "intent": "thanks"},
-  {"text": "i appreciate it", "intent": "thanks"},
-  {"text": "that was helpful", "intent": "thanks"},
-
-  {"text": "what can you do", "intent": "capabilities"},
-  {"text": "how can you help", "intent": "capabilities"},
-  {"text": "what are your features", "intent": "capabilities"},
-  {"text": "what is your purpose", "intent": "capabilities"},
-  {"text": "how do you work", "intent": "capabilities"},
-
-  {"text": "who are you", "intent": "identity"},
-  {"text": "what is your name", "intent": "identity"},
-  {"text": "are you a bot", "intent": "identity"},
-  {"text": "are you a robot", "intent": "identity"},
-  {"text": "tell me about yourself", "intent": "identity"}
-]
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "hello",
+        "hi",
+        "hey",
+        "good morning",
+        "good afternoon",
+        "good evening",
+        "what's up"
+      ],
+      "responses": [
+        "Hello!",
+        "Hi there!",
+        "Hey! How can I help you?",
+        "Good to see you!"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "bye",
+        "goodbye",
+        "see you later",
+        "see you soon",
+        "good night",
+        "farewell",
+        "take care",
+        "have a nice day",
+        "talk to you later",
+        "catch you later"
+      ],
+      "responses": [
+        "Goodbye!",
+        "See you later!",
+        "Take care!",
+        "Have a great day!"
+      ]
+    },
+    {
+      "tag": "help",
+      "patterns": [
+        "can you help me",
+        "i need help",
+        "help me please",
+        "i am lost",
+        "can you assist me",
+        "support needed",
+        "i need assistance",
+        "i need some help here",
+        "can you help me with this",
+        "i'm stuck"
+      ],
+      "responses": [
+        "Sure! What do you need help with?",
+        "I'm here to help!",
+        "Tell me more about your problem."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "thank you",
+        "thanks",
+        "thanks a lot",
+        "thanks!",
+        "thank you so much",
+        "ok thanks",
+        "alright thanks",
+        "cool thanks"
+      ]
+      ,
+      "responses": [
+        "You're welcome!",
+        "No problem at all!",
+        "Glad I could help 😊"
+      ]
+    },
+    {
+      "tag": "status",
+      "patterns": [
+        "how are you",
+        "how are you doing",
+        "how is it going",
+        "how do you feel",
+        "are you ok",
+        "are you doing well",
+        "how is everything",
+        "you good",
+        "everything alright"
+      ],
+      "responses": [
+        "I'm doing great, thanks for asking!",
+        "All good here 😊 How about you?",
+        "I'm fine and ready to help!"
+      ]
+    }
+  ]
+}

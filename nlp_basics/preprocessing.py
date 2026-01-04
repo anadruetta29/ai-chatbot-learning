@@ -28,25 +28,21 @@ def get_wordnet_pos(treebank_tag):
         return wordnet.NOUN
 
 def preprocess_text(text):
-    # Join sentences
-    original_text = " ".join(text)
-    # print("Original text:", original_text)
-
-    # Tokenize
+    # Accept string or list of strings
+    if isinstance(text, list):
+        original_text = " ".join(text)
+    else:
+        original_text = text
     tokens = word_tokenize(original_text.lower())
-    # print("Tokens:", tokens)
-
-    # Remove stopwords
     stop_words = set(stopwords.words("english"))
     filtered_tokens = [t for t in tokens if t.isalpha() and t not in stop_words]
-    # print("Filtered tokens:", filtered_tokens)
-
-    # Lemmanization
     lemmatizer = WordNetLemmatizer()
     pos_tags = pos_tag(filtered_tokens)
-    lemmatized_tokens = [lemmatizer.lemmatize(token, get_wordnet_pos(pos))
-                     for token, pos in pos_tags]
-    # print("Lemmatized tokens:", lemmatized_tokens)
+    lemmatized_tokens = [
+        lemmatizer.lemmatize(token, get_wordnet_pos(pos))
+        for token, pos in pos_tags
+    ]
     return lemmatized_tokens
+
 
 lemmatized_tokens = preprocess_text(sentences)
