@@ -30,18 +30,17 @@ def predict_intent(text):
 
     return model.classes_[idx], probs[idx]
 
-def get_response(intent, confidence, responses, threshold=0.20):
+def get_response(intent, confidence, responses, threshold=0.1):
     if confidence <= threshold:
-        return "Sorry, I didn't understand that."
+        return "Sorry,I didn't understand that."
 
     return random.choice(responses.get(intent, ["..."]))
-
 
 def main():
     responses = load_responses("./datasets/dataset.json")
 
     print("Chatbot ready! (type 'quit' to exit)")
-
+    print("-------------------------------------")
     while True:
         user_input = input("You: ")
 
@@ -52,6 +51,11 @@ def main():
         intent, confidence = predict_intent(user_input)
         reply = get_response(intent, confidence, responses)
 
+
+        # Save logs
+        if reply is None:
+            with open("logs/unknown.txt", "a") as f:
+                f.write(user_input + "\n")
         print(f"ChatBot: {reply}")
 
 if __name__ == "__main__":

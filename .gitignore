@@ -205,3 +205,7 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Project
+/ml_chatbot/models/model.pkl
+/ml_chatbot/models/vectorizer.pkl

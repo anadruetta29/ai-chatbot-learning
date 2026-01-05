@@ -5,9 +5,17 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score
 import joblib
+from pathlib import Path
 
 from nlp_basics.preprocessing import preprocess_text
 
+def clean_previous_models():
+    model_path = Path("models/model.pkl")
+    vectorizer_path = Path("models/vectorizer.pkl")
+
+    for path in [model_path, vectorizer_path]:
+        if path.exists():
+            path.unlink()
 
 def read_intents_json(path):
     with open(path, "r") as f:
@@ -45,7 +53,7 @@ def preprocess_series(text_series):
 
 
 def vectorize_TF_IDF(X_train, X_test):
-    vectorizer = TfidfVectorizer()
+    vectorizer = TfidfVectorizer(ngram_range=(1, 2))
     X_train_vec = vectorizer.fit_transform(X_train)
     X_test_vec = vectorizer.transform(X_test)
     return X_train_vec, X_test_vec, vectorizer
@@ -58,6 +66,7 @@ def train_model_NB(X_train_vec, y_train):
 
 
 def save_data_model(model, vectorizer):
+    clean_previous_models()
     joblib.dump(model, "models/model.pkl")
     joblib.dump(vectorizer, "models/vectorizer.pkl")
     print("Model and vectorizer saved")
