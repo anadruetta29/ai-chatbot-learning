@@ -96,6 +96,87 @@
         "All good here How about you?",
         "I'm fine and ready to help!"
       ]
+    },
+    {
+      "tag": "confusion",
+      "patterns": [
+        "I don't understand",
+        "I'm confused",
+        "That doesn't make sense",
+        "What do you mean?",
+        "Can you explain that?",
+        "I'm not sure I get it",
+        "This is confusing"
+      ],
+      "responses": [
+        "No problem, let me explain it in a simpler way.",
+        "Sure! What part is confusing you?",
+        "Let me clarify that for you."
+      ]
+    },
+    {
+      "tag": "restart_conversation",
+      "patterns": [
+        "start over",
+        "restart",
+        "let's start again",
+        "reset the conversation",
+        "begin from scratch",
+        "can we start over?"
+      ],
+      "responses": [
+        "Alright, let's start over",
+        "Conversation restarted. How can I help you?",
+        "Done! What would you like to do now?"
+      ]
+    },
+    {
+      "tag": "repeat_response",
+      "patterns": [
+        "can you repeat that?",
+        "say that again",
+        "repeat please",
+        "I missed that",
+        "could you repeat your answer?",
+        "what did you say?"
+      ],
+      "responses": [
+        "Of course! Here's that again.",
+        "Sure, let me repeat it.",
+        "No problem, I'll say it again."
+      ]
+    },
+    {
+      "tag": "change_topic",
+      "patterns": [
+        "change the topic",
+        "let's talk about something else",
+        "another question",
+        "switch topic",
+        "let's move on",
+        "different topic please"
+      ],
+      "responses": [
+        "Sure! What would you like to talk about?",
+        "Alright, let's change the topic.",
+        "No problem, what's next?"
+      ]
+    },
+    {
+      "tag": "cancel",
+      "patterns": [
+        "cancel",
+        "never mind",
+        "forget it",
+        "stop",
+        "cancel this",
+        "I want to cancel"
+      ],
+      "responses": [
+        "Okay, I've canceled that.",
+        "No problem, it's been canceled.",
+        "Alright, let me know if you need anything else."
+      ]
     }
   ]
 }
