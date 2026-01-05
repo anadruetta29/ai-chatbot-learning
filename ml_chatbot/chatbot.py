@@ -30,7 +30,7 @@ def predict_intent(text):
 
     return model.classes_[idx], probs[idx]
 
-def get_response(intent, confidence, responses, threshold=0.20):
+def get_response(intent, confidence, responses, threshold=0.1):
     if confidence <= threshold:
         return "Sorry,I didn't understand that."
 
